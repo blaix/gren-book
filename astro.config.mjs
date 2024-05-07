@@ -45,6 +45,14 @@ export default defineConfig({
           ],
         },
         {
+          label: 'Applications',
+          items: [
+            { label: 'The Elm Architecture', link: '/applications/tea/' },
+            { label: 'Browser Applications', link: '/applications/browser/' },
+            { label: 'Node Applications', link: '/applications/node/' },
+          ],
+        },
+        {
           label: 'Appendix',
           items: [
             { label: 'gren.json', link: '/appendix/gren_json/' },
