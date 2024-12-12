@@ -42,11 +42,12 @@ main =
 
 init : Environment -> Init.Task (Cmd a)
 init env =
-    "Hello, World!"
-        |> Stream.sendLine env.stdout
-        |> Task.execute
-        |> Node.endWithCmd
+    Stream.writeLineAsBytes "Hello, World!" env.stdout
+        |> Task.onError (\_ -> Task.succeed env.stdout)
+        |> Node.endSimpleProgram
 ```
+
+TODO: add section to book for anonymous functions?
 
 ### Compile
 
